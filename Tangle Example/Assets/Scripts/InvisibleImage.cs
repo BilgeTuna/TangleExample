@@ -1,0 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+// Credit: http://answers.unity.com/answers/1157876/view.html
+public class InvisibleImage : Graphic
+{
+    public override void SetMaterialDirty() { return; }
+    public override void SetVerticesDirty() { return; }
+
+    protected override void OnPopulateMesh(VertexHelper vh)
+    {
+        vh.Clear();
+        return;
+    }
+}
